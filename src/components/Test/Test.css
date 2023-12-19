@@ -1,0 +1,100 @@
+
+
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 800px;
+    perspective-origin: 50%;
+    animation: floatAnimation 5s infinite alternate ease-in-out;
+
+}
+@keyframes floatAnimation {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(40px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+
+.image-cube {
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: transform 0.7s ease-out; 
+}
+
+.image-cube div {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+}
+
+img {
+    width: 100%;
+}
+
+.front {
+    transform: translateZ(150px);
+    position: relative;
+}
+
+.right {
+    transform: rotateY(-270deg) translateX(150px);
+    transform-origin: 100% 0;
+}
+
+.back {
+    transform: translateZ(-150px) rotateY(180deg);
+}
+
+.left {
+    transform: rotateY(270deg) translateX(-150px);
+    transform-origin: 0 100%;
+}
+
+.swipe{
+    width: 50px;
+    position: absolute;
+    top:40px;
+    left: 100px;
+    animation: swipeAnimation 5s linear infinite; 
+
+}
+
+@keyframes swipeAnimation {
+    0% {
+      transform: translateX(-100%);
+    }
+  
+    100% {
+      transform: translateX(100%);
+    }
+  }
